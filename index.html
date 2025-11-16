@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,117 +8,169 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #000000; /* noir profond */
+      background-color: #000000;
       color: #f4f4f4;
       text-align: center;
-    }header {
-  background-color: #000000;
-  padding: 2rem;
-  font-size: 2.2rem;
-  color: #ffffff; /* blanc */
-  font-weight: 600;
-  letter-spacing: 1px;
-}
+    }
 
-/* Logo haut */
-.logo-top {
-  margin-top: 1.5rem;
-  max-width: 170px;
-}
+    /* --- Bandeau PREMIUM déjà présent --- */
+    .premium-banner {
+      background: linear-gradient(90deg, #d4af37, #f7e27c, #d4af37);
+      padding: 10px 0;
+      font-weight: bold;
+      color: #000;
+      font-size: 17px;
+      letter-spacing: 1px;
+    }
 
-section {
-  padding: 3rem 1rem;
-  max-width: 800px;
-  margin: auto;
-}
+    header {
+      background-color: #000000;
+      padding: 2rem;
+      font-size: 2.2rem;
+      color: #ffffff;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
 
-h1 {
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
+    /* Icône premium déjà présente */
+    .premium-icon {
+      color: #d4af37;
+      font-size: 28px;
+      margin-left: 6px;
+    }
 
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
+    .logo-top {
+      margin-top: 1.5rem;
+      max-width: 170px;
+    }
 
-.button {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.8rem 1.5rem;
-  background-color: #ffffff;
-  color: #111;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-}
+    section {
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
 
-footer {
-  margin-top: 4rem;
-  padding: 2rem;
-  font-size: 0.9rem;
-  color: #aaa;
-  background-color: #000000;
-}
+    h1 {
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
 
-/* Logo bas */
-.logo-bottom {
-  margin-bottom: 1rem;
-  max-width: 120px;
-}
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
 
+    /* --- Mise en valeur des boutons Stripe --- */
+    .button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 1rem 1.7rem;
+      background: linear-gradient(90deg, #ffffff, #e8e8e8);
+      color: #111;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 0 12px rgba(255,255,255,.25);
+      transition: 0.2s;
+      border: 2px solid #d4af37;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 18px rgba(255,255,255,.45);
+    }
+
+    /* --- Badge qualité certifiée ajouté --- */
+    .badge-certif {
+      margin-top: 12px;
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid #d4af37;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #d4af37;
+      font-weight: 600;
+      background: rgba(212, 175, 55, 0.1);
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      background-color: #000000;
+    }
+
+    /* Logo bas rétréci + rapproché */
+    .logo-bottom {
+      max-width: 90px;
+      margin-bottom: 0.5rem;
+      opacity: 0.9;
+    }
   </style>
-</head><body>  <!-- HEADER -->  <header>
-    La Maison de la Nature
+</head>
+
+<body>
+
+  <!-- Bandeau premium -->
+  <div class="premium-banner">QUALITÉ PREMIUM • PRODUITS 100% NATURELS • LABORATOIRE CERTIFIÉ</div>
+
+  <header>
+    La Maison de la Nature 
+    <span class="premium-icon">★</span>
     <br>
     <img src="https://raw.githubusercontent.com/LaMaisondelaNature/la-maison-de-la-nature27/refs/heads/main/docs/file_000000004e1872439e1c68c6c3c8d825.png" 
          alt="logo maison nature" 
          class="logo-top">
-  </header>  <!-- Bandeau qualité inspiré du style NAHL -->  <div style="background:#0a0a0a; padding:1.2rem 0; border-top:1px solid #222; border-bottom:1px solid #222; margin-bottom:2rem;">
-    <p style="margin:0; font-size:1rem; color:#d8d8d8; font-weight:500; letter-spacing:0.3px;">
-      Produits 100% naturels • Qualité Premium • Sélectionnés avec soin
-    </p>
-  </div>  <!-- PRODUIT 1 : SHILAJIT -->  <section style="background:#0b0b0b; padding:3rem 1rem; border-radius:18px; box-shadow:0 0 20px rgba(255,255,255,0.06); margin-bottom:3rem;">
+  </header>
+
+  <!-- PRODUIT 1 -->
+  <section>
     <h1>SHILAJIT D'ALTAÏ NATUREL</h1>
+
+    <div class="badge-certif">✔ Qualité certifiée & testée en laboratoire</div>
+
     <p>Découvrez le SHILAJIT d'Altaï — une résine 100% naturelle pour renforcer votre énergie, concentration, vitalité et testostérone.</p>
-    <p>Sans ajout de molécules, tout est 100% naturel et qualitatif, testé en laboratoire par des professionnels. Rapport qualité-prix assuré.</p><a class="button" href="https://buy.stripe.com/7sYcN55HKgAj0HRg1A5c400" target="_blank">Acheter maintenant</a>
+    <p>Sans ajout de molécules, tout est 100% naturel et qualitatif, testé en laboratoire par des professionnels. Rapport qualité-prix assuré.</p>
 
-<br><small>Livraison standard 3-6 jours</small>
+    <a class="button" href="https://buy.stripe.com/7sYcN55HKgAj0HRg1A5c400" target="_blank">
+      Acheter maintenant
+    </a>
 
-  </section>  <!-- PRODUIT 2 : HUILE DE NIGELLE -->  <section>
-    <h1>HUILE DE NIGELLE — CAPSULES (60 unités)</h1><p>L’huile de nigelle contient des vitamines, minéraux et acides gras essentiels au bon fonctionnement du système nerveux et cérébral.</p>
+    <p style="margin-top:10px; font-size:15px; opacity:0.8;">
+      🚚 Livraison Standard : <strong>3 à 6 jours ouvrés</strong>
+    </p>
+  </section>
 
-<p>Elle aide à soutenir l’activité cérébrale et à prévenir certaines maladies neurodégénératives.</p>
+  <!-- PRODUIT 2 -->
+  <section>
+    <h1>HUILE DE NIGELLE — CAPSULES (60 unités)</h1>
 
-<p>Traditionnellement utilisée pour améliorer la digestion, la respiration et la santé de la peau, elle possède aussi des propriétés anti-inflammatoires et renforce le système immunitaire.</p>
+    <div class="badge-certif">✔ Qualité certifiée & 100% naturelle</div>
 
-<p>“La graine de nigelle guérit de toutes les maladies sauf la mort.”</p>
+    <p>L’huile de nigelle contient des vitamines, minéraux et acides gras essentiels au bon fonctionnement du système nerveux et cérébral.</p>
+    <p>Elle aide à soutenir l’activité cérébrale et à prévenir certaines maladies neurodégénératives.</p>
+    <p>Traditionnellement utilisée pour améliorer la digestion, la respiration et la santé de la peau, elle possède aussi des propriétés anti-inflammatoires et renforce le système immunitaire.</p>
+    <p>“La graine de nigelle guérit de toutes les maladies sauf la mort.”</p>
+    <p>Nos capsules sont 100 % naturelles et de qualité premium, sélectionnées avec soin.</p>
 
-<p>Nos capsules sont 100 % naturelles et de qualité premium, sélectionnées avec soin.</p>
+    <a class="button" href="https://buy.stripe.com/14AcN5c680BlduD7v45c401" target="_blank">
+      Acheter maintenant
+    </a>
 
-<!-- BOUTON STRIPE INTÉGRÉ -->
-<a class="button" href="https://buy.stripe.com/14AcN5c680BlduD7v45c401" target="_blank">Acheter maintenant</a>
+    <p style="margin-top:10px; font-size:15px; opacity:0.8;">
+      🚚 Livraison Standard : <strong>3 à 6 jours ouvrés</strong>
+    </p>
+  </section>
 
-<br><small>Livraison standard 3-6 jours</small>
-
-  </section>  <!-- FOOTER -->  <!-- Section témoignages style NAHL -->  <section style="padding:3rem 1rem; margin:2rem auto; max-width:900px; text-align:center;">
-    <h2 style="color:#fff; font-size:1.8rem; margin-bottom:1.5rem;">Avis clients</h2><div style="display:flex; flex-direction:column; gap:1.5rem;">
-  <div style="background:#0c0c0c; padding:1.5rem; border-radius:12px; border:1px solid #1c1c1c; color:#ddd;">“Super qualité, livraison rapide. Le shilajit est incroyable.” — <strong>Thomas</strong></div>
-  <div style="background:#0c0c0c; padding:1.5rem; border-radius:12px; border:1px solid #1c1c1c; color:#ddd;">“La nigelle m’aide beaucoup au quotidien. Merci pour le service.” — <strong>Sara</strong></div>
-</div>
-
-  </section>  <!-- Section garanties premium -->  <section style="padding:3rem 1rem; margin:2rem auto; max-width:900px; text-align:center;">
-    <h2 style="color:#fff; font-size:1.8rem; margin-bottom:1.5rem;">Nos garanties</h2>
-    <div style="display:flex; flex-direction:column; gap:1.5rem; color:#dcdcdc;">
-      <p>✔️ Produits naturels et testés en laboratoire</p>
-      <p>✔️ Support client réactif (WhatsApp & email)</p>
-      <p>✔️ Livraison suivie sous 3 à 6 jours</p>
-    </div>
-  </section>  <footer>
+  <footer>
     <img src="https://raw.githubusercontent.com/LaMaisondelaNature/la-maison-de-la-nature27/refs/heads/main/docs/file_000000004e1872439e1c68c6c3c8d825.png"
          alt="logo bas"
          class="logo-bottom">
     <br>
     Contact : yb27pro@gmail.com | WhatsApp : +33 7 45 34 45 90
-  </footer></body>
-</html> 
+  </footer>
+
+</body>
+</html>
