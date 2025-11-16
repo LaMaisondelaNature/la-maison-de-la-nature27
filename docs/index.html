@@ -1,125 +1,216 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>La Maison de la Nature</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #000000; /* noir profond */
-      color: #f4f4f4;
-      text-align: center;
+    /* --- Reset & base --- */
+    :root{
+      --bg: #000000; /* noir profond */
+      --text: #ffffff;
+      --muted: #bdbdbd;
+      --accent: #ffffff; /* boutons en blanc (tu peux changer) */
+      --max-width: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-align:center;
+      line-height:1.45;
     }
 
-    header {
-      background-color: #000000;
-      padding: 2rem;
-      font-size: 2.2rem;
-      color: #ffffff; /* blanc */
-      font-weight: 600;
-      letter-spacing: 1px;
+    /* thin promo bar (optionnel) */
+    .promo{
+      background:#111; /* sombre, garde l'ensemble noir */
+      color:var(--muted);
+      font-size:0.9rem;
+      padding:6px 10px;
     }
 
-    /* Logo haut */
-    .logo-top {
-      margin-top: 1.5rem;
-      max-width: 170px;
+    /* Header */
+    header{
+      padding:28px 16px 8px;
+      max-width:var(--max-width);
+      margin:0 auto;
+    }
+    .site-title{
+      font-size:2.4rem; /* grand titre en haut */
+      margin:0;
+      letter-spacing:0.6px;
+      font-weight:700;
+      color:var(--text);
+    }
+    /* logo top */
+    .logo-top{
+      display:block;
+      margin:18px auto 6px;
+      width:220px;      /* taille plus large mais correcte sur mobile */
+      max-width:55%;
+      height:auto;
     }
 
-    section {
-      padding: 3rem 1rem;
-      max-width: 800px;
-      margin: auto;
+    /* Container */
+    .container{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:20px 16px 60px;
     }
 
-    h1 {
-      color: #ffffff;
-      margin-bottom: 1rem;
+    /* Product card style */
+    .product{
+      background:transparent;
+      border-radius:10px;
+      padding:26px 18px;
+      margin:18px auto;
+      text-align:left;
+      max-width:900px;
+      color:var(--text);
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:20px;
+      align-items:center;
     }
 
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
+    /* On wider screens show image + text side-by-side */
+    @media(min-width:820px){
+      .product{grid-template-columns: 360px 1fr;}
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #ffffff;
-      color: #111;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
+    .product .media{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .product img{
+      max-width:100%;
+      height:auto;
+      border-radius:8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
     }
 
-    footer {
-      margin-top: 4rem;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #aaa;
-      background-color: #000000;
+    .product h2{
+      margin:0 0 8px;
+      font-size:1.6rem;
+      color:var(--text);
+      letter-spacing:0.6px;
+    }
+    .product p{margin:0 0 12px;color:var(--muted); font-size:1rem}
+
+    .actions{
+      margin-top:6px;
     }
 
-    /* Logo bas */
-    .logo-bottom {
-      margin-bottom: 1rem;
-      max-width: 120px;
+    .btn{
+      display:inline-block;
+      background:var(--accent);
+      color:#111;
+      padding:12px 18px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.45);
+      transition:transform .08s ease, box-shadow .08s ease;
     }
+    .btn:hover{ transform:translateY(-3px); box-shadow:0 12px 24px rgba(0,0,0,0.5) }
+
+    /* small subtle price badge */
+    .price{
+      display:inline-block;
+      margin-left:12px;
+      color:var(--text);
+      background:rgba(255,255,255,0.06);
+      padding:6px 10px;
+      border-radius:8px;
+      font-weight:700;
+      font-size:0.95rem;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:40px;
+      padding:28px 16px 48px;
+      color:var(--muted);
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.03);
+    }
+    .logo-bottom{ display:block; margin:0 auto 10px; width:110px; max-width:28%; }
+
+    /* small helpers */
+    .center{ text-align:center }
+    small { color:var(--muted); display:block; margin-top:6px; }
+
   </style>
 </head>
-
 <body>
 
-  <!-- HEADER -->
+  <!-- Promo/bar (optionnel) -->
+  <div class="promo center">Livraison OFFERTE à partir de 90€ d'achat</div>
+
+  <!-- Header -->
   <header>
-    La Maison de la Nature
-    <br>
-    <img src="https://raw.githubusercontent.com/LaMaisondelaNature/la-maison-de-la-nature27/refs/heads/main/docs/file_000000004e1872439e1c68c6c3c8d825.png" 
-         alt="logo maison nature" 
-         class="logo-top">
+    <h1 class="site-title">La Maison de la Nature</h1>
+    <!-- LOGO : url déjà dans ton repo GitHub -->
+    <img class="logo-top" src="https://raw.githubusercontent.com/LaMaisondelaNature/la-maison-de-la-nature27/refs/heads/main/docs/file_000000004e1872439e1c68c6c3c8d825.png" alt="Logo La Maison de la Nature">
   </header>
 
-  <!-- PRODUIT 1 : SHILAJIT -->
-  <section>
-    <h1>SHILAJIT D'ALTAÏ NATUREL</h1>
-    <p>Découvrez le SHILAJIT d'Altaï — une résine 100% naturelle pour renforcer votre énergie, concentration, vitalité et testostérone.</p>
-    <p>Sans ajout de molécules, tout est 100% naturel et qualitatif, testé en laboratoire par des professionnels. Rapport qualité-prix assuré.</p>
+  <!-- Main content -->
+  <main class="container">
 
-    <a class="button" href="https://buy.stripe.com/7sYcN55HKgAj0HRg1A5c400" target="_blank">
-      Acheter maintenant
-    </a>
-  </section>
+    <!-- Produit 1 : SHILAJIT -->
+    <article class="product" id="shilajit">
+      <div class="media">
+        <!-- si tu as une image produit remplace l'URL ci-dessous par ton image -->
+        <img src="https://raw.githubusercontent.com/LaMaisondelaNature/la-maison-de-la-nature27/refs/heads/main/docs/file_000000004e1872439e1c68c6c3c8d825.png" alt="Shilajit - image produit">
+      </div>
 
-  <!-- PRODUIT 2 : HUILE DE NIGELLE -->
-  <section>
-    <h1>HUILE DE NIGELLE — CAPSULES (60 unités)</h1>
+      <div class="content">
+        <h2>SHILAJIT D'ALTAÏ — Résine 100% naturelle</h2>
+        <p>Renforce l'énergie, la concentration et la vitalité. Sans additif, produit naturel et testé. Qualité premium.</p>
 
-    <p>L’huile de nigelle contient des vitamines, minéraux et acides gras essentiels au bon fonctionnement du système nerveux et cérébral.</p>
+        <div class="actions">
+          <a class="btn" href="https://buy.stripe.com/7sYcN55HKgAj0HRg1A5c400" target="_blank" rel="noopener">Acheter maintenant</a>
+          <span class="price">€ 19,90</span>
+          <small>Livraison standard 3-6 jours</small>
+        </div>
+      </div>
+    </article>
 
-    <p>Elle aide à soutenir l’activité cérébrale et à prévenir certaines maladies neurodégénératives.</p>
+    <!-- Produit 2 : HUILE DE NIGELLE -->
+    <article class="product" id="nigelle">
+      <div class="media">
+        <!-- remplace par une vraie photo de produit si tu as -->
+        <img src="https://raw.githubusercontent.com/LaMaisondelaNature/la-maison-de-la-nature27/refs/heads/main/docs/file_000000004e1872439e1c68c6c3c8d825.png" alt="Huile de Nigelle">
+      </div>
 
-    <p>Traditionnellement utilisée pour améliorer la digestion, la respiration et la santé de la peau, elle possède aussi des propriétés anti-inflammatoires et renforce le système immunitaire.</p>
+      <div class="content">
+        <h2>CAPSULES D'HUILE DE NIGELLE — 60 unités</h2>
+        <p>L’huile de nigelle contient des vitamines, minéraux et acides gras essentiels. Soutien immunitaire, propriétés anti-inflammatoires et bienfaits pour la peau et la digestion.</p>
 
-    <p>“La graine de nigelle guérit de toutes les maladies sauf la mort.”</p>
+        <p><em>“La graine de nigelle guérit de tout sauf la mort.” — usage traditionnel</em></p>
 
-    <p>Nos capsules sont 100 % naturelles et de qualité premium, sélectionnées avec soin.</p>
+        <div class="actions">
+          <!-- lien Stripe que tu as fourni -->
+          <a class="btn" href="https://buy.stripe.com/14AcN5c680BlduD7v45c401" target="_blank" rel="noopener">Acheter maintenant</a>
+          <span class="price">€ 11,99</span>
+          <small>Qualité premium — 60 capsules</small>
+        </div>
+      </div>
+    </article>
 
-    <!-- LIEN STRIPE AJOUTÉ -->
-    <a class="button" href="https://buy.stripe.com/14AcN5c680BlduD7v45c401" target="_blank">
-      Acheter maintenant
-    </a>
-  </section>
+  </main>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
-    <img src="https://raw.githubusercontent.com/LaMaisondelaNature/la-maison-de-la-nature27/refs/heads/main/docs/file_000000004e1872439e1c68c6c3c8d825.png"
-         alt="logo bas"
-         class="logo-bottom">
-    <br>
+    <img class="logo-bottom" src="https://raw.githubusercontent.com/LaMaisondelaNature/la-maison-de-la-nature27/refs/heads/main/docs/file_000000004e1872439e1c68c6c3c8d825.png" alt="logo bas">
     Contact : yb27pro@gmail.com | WhatsApp : +33 7 45 34 45 90
+    <br><small>© La Maison de la Nature</small>
   </footer>
 
 </body>
