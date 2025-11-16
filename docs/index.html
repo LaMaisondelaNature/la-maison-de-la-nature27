@@ -8,23 +8,25 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #000000; /* Noir identique au logo */
+      background-color: #000000; /* Noir profond comme ton logo */
       color: #f4f4f4;
       text-align: center;
     }
 
     header {
-      background-color: #000000;
+      background-color: #000000; /* Même noir */
       padding: 2rem 1rem;
-      font-size: 2.2rem;
+      font-size: 2.2rem; /* Titre plus grand */
       color: #d4af37;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 1px;
     }
 
+    /* Logo du haut */
     .logo-top {
-      margin-top: 1.5rem;
-      width: 180px; /* Logo du haut (grand) */
+      width: 180px; /* Plus grand */
+      margin: 1.2rem auto 2rem auto;
+      display: block;
     }
 
     section {
@@ -36,7 +38,6 @@
     h1 {
       color: #d4af37;
       margin-bottom: 1rem;
-      font-size: 1.9rem;
     }
 
     p {
@@ -57,16 +58,18 @@
 
     footer {
       margin-top: 4rem;
-      padding: 2rem;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
       color: #aaa;
       background-color: #000000;
     }
 
+    /* Logo du bas */
     .logo-bottom {
-      margin-top: 1rem;
-      width: 85px; /* Logo du bas (petit) */
-      opacity: 0.85;
+      width: 110px; /* Plus petit */
+      margin: 0 auto 1rem auto;
+      display: block;
+      opacity: 0.9;
     }
   </style>
 </head>
@@ -74,34 +77,28 @@
 
   <header>
     La Maison de la Nature
-    <br>
-    <!-- Logo en haut -->
-    <img
-      src="https://raw.githubusercontent.com/LaMaisondelaNature/la-maison-de-la-nature27/refs/heads/main/docs/file_000000004e1872439e1c68c6c3c8d825.png"
-      alt="Logo La Maison de la Nature"
-      class="logo-top"
-    />
   </header>
+
+  <!-- LOGO EN HAUT -->
+  <img class="logo-top" src="https://raw.githubusercontent.com/LaMaisondelaNature/la-maison-de-la-nature27/refs/heads/main/docs/file_000000004e1872439e1c68c6c3c8d825.png" alt="Logo La Maison de la Nature" />
 
   <section>
     <h1>SHILAJIT D'ALTAÏ NATUREL</h1>
     <p>Découvrez le SHILAJIT d'Altaï — une résine 100% naturelle pour renforcer votre énergie, concentration, vitalité et testostérone.</p>
     <p>Sans ajout de molécules, tout est 100% naturel et qualitatif, testé en laboratoire par des professionnels. Rapport qualité-prix assuré.</p>
+
     <a class="button" href="https://buy.stripe.com/7sYcN55HKgAj0HRg1A5c400" target="_blank">Acheter maintenant</a>
   </section>
 
   <footer>
+
+    <!-- LOGO EN BAS -->
+    <img class="logo-bottom" src="https://raw.githubusercontent.com/LaMaisondelaNature/la-maison-de-la-nature27/refs/heads/main/docs/file_000000004e1872439e1c68c6c3c8d825.png" alt="Logo bas" />
+
     Contact : yb27pro@gmail.com  
-    <br>
+    <br />
     WhatsApp : +33 7 45 34 45 90
-    <br>
-    <!-- Logo en bas -->
-    <img
-      src="https://raw.githubusercontent.com/LaMaisondelaNature/la-maison-de-la-nature27/refs/heads/main/docs/file_000000004e1872439e1c68c6c3c8d825.png"
-      alt="Logo La Maison de la Nature"
-      class="logo-bottom"
-    />
   </footer>
 
 </body>
-</html>  
+</html> 
